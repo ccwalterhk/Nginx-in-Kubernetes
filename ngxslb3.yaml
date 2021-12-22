@@ -2,6 +2,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: ngx-config-nfs-pv
+  #Name of PV where it stores the configuration directory/files
 spec:
   capacity:
     storage: 1Mi
@@ -9,9 +10,12 @@ spec:
   accessModes:
     - ReadWriteMany
   storageClassName: ngx-config
+  #PVC below uses this name to associate PV
   nfs:
     server: 192.168.1.10
+    #The configuration files are stored  in NFS
     path: "/mnt/md1/ngx-config"
+    #This is the NFS mount point
   mountOptions:
     - hard
     - nfsvers=4.1
@@ -20,6 +24,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: ngx-config-pvc
+  #Name of PVC
   namespace: default
 spec:
   accessModes:
