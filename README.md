@@ -19,17 +19,3 @@ The upstream is named as "stream_backend_netbox_HTTP_9090"
 In the upstream session, it defines the real server. 
 The real server can be defined either using IP address or FQDN.  
 In this example, FQDN - netbox.home.local is used. 
-
-server {
-         listen 9090;
-         #allow all;
-         proxy_pass stream_backend_netbox_HTTP_9090;
-    }
-
-
-
-upstream stream_backend_netbox_HTTP_9090 {
-         #hash $remote_addr;
-         #zone stream_backend_netbox_HTTP_9090 64k;
-         server netbox.home.local:9090;
-    } 
