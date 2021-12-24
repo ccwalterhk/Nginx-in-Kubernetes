@@ -4,7 +4,7 @@ Deployment of Nginx load balancer in Kubernetes
 
 This is an example of NGX load balancer deployment in K8s.
 The load balancer configuration stores externally in NFS persistent volume.
-PV, PVC and service node port is configured inside the .yaml file.
+PV, PVC and service node port is configured in the .yaml file.
 
 
 The directory "ngx-config" stores sample configuration of ngx load balancer.
