@@ -1,4 +1,4 @@
-# Install-Nginx-in-Kubernetes
+# Nginx-in-Kubernetes
 Deployment of Nginx load balancer in Kubernetes
 
 
